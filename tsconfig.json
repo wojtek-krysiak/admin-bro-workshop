@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+      "outDir": "./built",
+      "target": "esnext",
+      "esModuleInterop": true,
+      "strictNullChecks": true,
+      "strictPropertyInitialization": true,
+      "strictFunctionTypes": true,
+      "strictBindCallApply": true,
+      "noImplicitThis": true,
+      "moduleResolution": "node",
+  },
+  "include": [
+      "./src/**/*",
+      "./spec/**/*"
+  ],
+  "exclude": [
+      "./src/**/*.tsx",
+  ]
+}
