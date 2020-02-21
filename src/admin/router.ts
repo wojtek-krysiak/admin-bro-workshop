@@ -6,12 +6,23 @@ import { WorklogModel } from '../worklogs/worklog.entity';
 import { PlanModel } from '../plans/worklog.entity';
 import { UserModel } from '../users/user.entity';
 import { ProjectModel } from '../projects/project.entity';
+import { JiraProjectAdapter } from '../jira-projects/jira-project.adapter';
 
 AdminBro.registerAdapter(AdminBroMongoose);
 
 export default (connection) => {
   const adminBro = new AdminBro({
-    resources: [WorklogModel, PlanModel, UserModel, ProjectModel],
+    resources: [
+      WorklogModel,
+      PlanModel,
+      UserModel,
+      ProjectModel,
+      new JiraProjectAdapter({
+        host: 'kmpgroup.atlassian.net',
+        email: process.env.JIRA_USER,
+        token: process.env.JIRA_TOKEN,
+      }),
+    ],
   });
   const router = buildRouter(adminBro);
   return { router, path: adminBro.options.rootPath };
