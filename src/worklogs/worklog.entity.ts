@@ -1,4 +1,6 @@
-import { prop, getModelForClass } from '@typegoose/typegoose';
+import { prop, getModelForClass, Ref } from '@typegoose/typegoose';
+import { User } from '../users/user.entity';
+import { Project } from '../projects/project.entity';
 
 export class Worklog {
   @prop({ required: true })
@@ -22,8 +24,11 @@ export class Worklog {
   @prop(({ required: true }))
   public description: string
 
-  @prop(({ required: true }))
-  public accountId: string
+  @prop(({ required: true, ref: 'User' }))
+  public accountId: Ref<User>
+
+  @prop(({ required: true, ref: 'Project' }))
+  public projectId: Ref<Project>
 }
 
 export const WorklogModel = getModelForClass(Worklog);
