@@ -24,8 +24,8 @@ export class Worklog {
   @prop(({ required: true }))
   public description: string
 
-  @prop(({ required: true, ref: 'User' }))
-  public accountId: Ref<User>
+  @prop(({ required: true }))
+  public accountId: string
 
   @prop(({ required: true, ref: 'Project' }))
   public projectId: Ref<Project>

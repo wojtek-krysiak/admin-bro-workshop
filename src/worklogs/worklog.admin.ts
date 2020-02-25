@@ -1,4 +1,6 @@
-import AdminBro, { ResourceOptions } from 'admin-bro';
+import AdminBro, {
+  ResourceOptions, Action, RecordActionResponse, RecordJSON,
+} from 'admin-bro';
 import { WorklogModel } from './worklog.entity';
 
 // eslint-disable-next-line import/prefer-default-export

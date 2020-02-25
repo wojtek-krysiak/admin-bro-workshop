@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon --watch 'src/**/*.ts' --ignore 'src/**/*.tsx' --exec 'ts-node' src/server.ts",
+    "dev": "nodemon --watch 'src/**/*.ts' --ignore 'src/**/*.tsx' --exec './node_modules/.bin/ts-node' src/server.ts",
     "lint": "eslint './src/**/*.ts' './src/**/*.tsx'"
   },
   "dependencies": {

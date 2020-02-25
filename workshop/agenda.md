@@ -20,6 +20,5 @@ TODO
 
 * time in worklogs: list and edit
 
-# new property
-* 1 to many - hooks
-
+# Akcje
+* edit layout in worklog
