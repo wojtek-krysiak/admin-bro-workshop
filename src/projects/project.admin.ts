@@ -1,4 +1,4 @@
-import { ResourceOptions } from 'admin-bro';
+import AdminBro, { ResourceOptions } from 'admin-bro';
 import { ProjectModel } from './project.entity';
 import { worklogSynchronizerService } from '../worklogs/services/worklog-synchronizer.service';
 
@@ -6,6 +6,13 @@ import { worklogSynchronizerService } from '../worklogs/services/worklog-synchro
 export const ProjectAdmin = {
   resource: ProjectModel,
   options: {
+    properties: {
+      issues: {
+        components: {
+          show: AdminBro.bundle('./admin/show-issues.component.tsx'),
+        },
+      },
+    },
     actions: {
       synchronizeWorklogs: {
         name: 'synchronizeWorklogs',

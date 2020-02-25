@@ -46,5 +46,6 @@ module.exports = {
   rules: {
     "import/no-unresolved": 'off',
     "import/prefer-default-export": 'off',
+    "no-underscore-dangle": 'off',
   },
 };

@@ -6,8 +6,11 @@ import { WorklogAdmin } from '../worklogs/worklog.admin';
 import { ProjectAdmin } from '../projects/project.admin';
 import { PlanModel } from '../plans/worklog.entity';
 import { UserModel } from '../users/user.entity';
+import { IssueModel } from '../issues/issue.entity';
 import { JiraProjectAdapter } from '../jira-projects/jira-project.adapter';
 import { locale } from './locale';
+
+import './worklog.controller';
 
 AdminBro.registerAdapter(AdminBroMongoose);
 
@@ -17,6 +20,7 @@ export default (connection) => {
       WorklogAdmin,
       PlanModel,
       UserModel,
+      IssueModel,
       ProjectAdmin,
       new JiraProjectAdapter({
         host: 'kmpgroup.atlassian.net',
@@ -26,6 +30,7 @@ export default (connection) => {
     ],
     locale,
   });
+  adminBro.watch();
   const router = buildRouter(adminBro);
   return { router, path: adminBro.options.rootPath };
 };
