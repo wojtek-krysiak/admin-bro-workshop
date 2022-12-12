@@ -17,7 +17,7 @@
     "admin-bro-mongoose": "^0.4.0",
     "axios": "^0.19.2",
     "date-fns": "^2.9.0",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "express-formidable": "^1.2.0",
     "jira-connector": "^3.1.0",
     "mongoose": "^5.9.1",
